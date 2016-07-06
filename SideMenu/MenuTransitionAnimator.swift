@@ -31,7 +31,8 @@ public class MenuTransitionAnimator: NSObject {
         let menu = context.viewControllerForKey(UITransitionContextToViewControllerKey)! 
 
         let view = menu.view
-        view.frame = CGRectMake(0, 0, menu.preferredContentSize.width, host.view.bounds.height)
+        let preferredContentSize = menu.preferredContentSize
+        view.frame = CGRectMake(0, 0, preferredContentSize.width, preferredContentSize.height)
         view.autoresizingMask = [.FlexibleRightMargin, .FlexibleHeight]
         view.translatesAutoresizingMaskIntoConstraints = true
         
